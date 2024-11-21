@@ -251,14 +251,14 @@ ip nat inside source list NAT_ACL interface GigabitEthernet1/0 overload
 ip route 0.0.0.0 0.0.0.0 29.1.1.254
 !
 ip access-list extended IPSEC_ACL
- permit gre host 29.1.1.1 host 49.1.1.1
-ip access-list extended NAT_ACL
- deny   ip any 10.0.0.0 0.255.255.255
- deny   ip any 172.16.0.0 0.15.255.255
- deny   ip any 192.168.0.0 0.0.255.255
- permit ip 10.0.0.0 0.0.0.255 any
- permit ip 172.20.1.0 0.0.0.255 any
- permit ip 192.168.2.0 0.0.0.255 any
+ permit gre host 29.1.1.1 host 49.1.1.1  -This ACL allows GRE traffic between HQ2 (29.1.1.1) and BR2 (49.1.1.1) to pass through the network and be protected by IPsec.
+ip access-list extended NAT_ACL -This access list is named NAT_ACL and is used to define traffic that should or should not be translated by NAT (Network Address Translation).
+ deny   ip any 10.0.0.0 0.255.255.255 - Traffic going to this network will not be translated, ensuring that local traffic (within private networks) remains unaltered.
+ deny   ip any 172.16.0.0 0.15.255.255 - Ensures that local traffic within this range is not translated.
+ deny   ip any 192.168.0.0 0.0.255.255 - Ensures local traffic within this range remains untouched by NAT.
+ permit ip 10.0.0.0 0.0.0.255 any -  (Translates traffic from this subnet when it accesses external networks.)
+ permit ip 172.20.1.0 0.0.0.255 any - (Translates traffic from this specific subnet when it accesses external networks.)
+ permit ip 192.168.2.0 0.0.0.255 any - (Translates traffic from this specific subnet for external communication.)
 !
 no cdp log mismatch duplex
 !
