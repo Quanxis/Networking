@@ -23,11 +23,21 @@ lower the better
 
 for OSPF
 [110/1001] bandwidth and source, the area must match
+default value 110 if there is no distance value 
 
 for EIGRP
 1-65535 the number must match
-
+202 203 the first value 90 is default, second value can go always more than 170+
 recursive routing issue dont put the same physical tunnel address, overlapping can happen.
+
+for BGP
+it should match like this,
+router bgp 2 in BR2
+ bgp log-neighbor-changes
+ neighbor 49.1.1.254 remote-as 1
+router bgp 1 in ISP
+ bgp log-neighbor-changes
+ neighbor 49.1.1.1 remote-as 2
 
 
 session2
