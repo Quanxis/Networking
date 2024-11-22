@@ -23,7 +23,7 @@ lower the better
 
 for OSPF
 [110/1001] bandwidth and source, the area must match
-default value 110 if there is no distance value 
+default value 110 if there is no distance value ITS ASSUMED
 
 for EIGRP
 1-65535 the number must match
