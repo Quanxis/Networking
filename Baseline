@@ -1,0 +1,35 @@
+Verifying DHCP Configuration:
+
+Now I am getting an IP address for PC1 from its gateway.
+Now I am getting an IP address for PC-BR1 from its gateway.
+Now I am getting an IP address for PC-BR2 from its gateway.
+
+Verifying Internet Access:
+
+PC1 is now able to access the Internet (ping 8.8.8.8).
+PC-BR1 is now able to access the Internet (ping 8.8.8.8).
+PC-BR2 is now able to access the Internet (ping 8.8.8.8).
+
+Communication Between PC1 and PC-BR2:
+
+PC1 to PC-BR2 traffic is now going through the MPLS core.
+PC-BR2 to PC1 traffic is now going through the MPLS core.
+
+Communication Between PC1 and PC-BR1:
+
+PC1 to PC-BR1 traffic is now going through the MPLS core.
+PC-BR1 to PC1 traffic is now going through the MPLS core
+
+
+Internet Link Failure on BR2:
+
+After shutting down gig1/0 on BR2, PC-BR2 can still access the Internet (ping 8.8.8.8) through HQ2.
+Turned gig1/0 back on BR2 before proceeding to the next test.
+MPLS Failure:
+
+After suspending both PE-CE links, PC1 to PC-BR1 traffic now goes through the GRE+IPSec tunnel between HQ2 and BR2.
+PC1 and PC-BR2 communication is still functional after MPLS failure.
+MPLS and Internet Link Failure on HQ2:
+
+After shutting down the link between HQ2 and ISP (MPLS is still down), communication between PC1 and PC-BR2 is still possible.
+Communication between PC1 and PC-BR1 is still possible.
