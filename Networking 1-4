@@ -27,7 +27,7 @@ default value 110 if there is no distance value
 
 for EIGRP
 1-65535 the number must match
-202 203 the first value 90 is default, second value can go always more than 170+
+202 203 the first value 90 is default which u can change, second value can go always more than 170+
 recursive routing issue dont put the same physical tunnel address, overlapping can happen.
 
 for BGP
