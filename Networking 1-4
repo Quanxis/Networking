@@ -27,6 +27,8 @@ for OSPF
 for EIGRP
 1-65535 the number must match
 
+recursive routing issue dont put the same physical tunnel address, overlapping can happen.
+
 
 session2
 scenario 1
