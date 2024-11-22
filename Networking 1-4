@@ -5,7 +5,7 @@ diatnace 140 170
 
 sh mpls ldp neighbor
 
-show ip interface brief | include Tunnel1 - Look for the status showing as up/up for both devices.
+show ip interface brief Tunnel1 - Look for the status showing as up/up for both devices.
 show crypto isakmp sa - show crypto isakmp sa -The output should show a state of QM_IDLE, indicating the phase 1 negotiation is complete
 
 
